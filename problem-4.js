@@ -1,22 +1,19 @@
 const address ={   street:10,
     house:'15A',
-    society:'EartPerfect'
+    society:'EarthPerfect'
 }
 
 function findAddress(obj) {
 
-if(obj.house !== '15A' && obj.society !=='EartPerfect'){
-return obj.street +','+'__'+','+'__';
+    if( typeof obj !=="object"){
+        return "Please input a object"
+    }
 
-}
-else if(obj.house !== '15A'){
-return obj.street +','+'__'+','+obj.society;
-}
-else{
-find = obj.street +','+obj.house+','+obj.society;
-
-return find;
-}  
+    const streetNo = obj.street || "__";
+    const houseNo = obj.house || "__";
+    const societyNo = obj.society || "__";
+    const myAddress = streetNo+","+houseNo+","+societyNo;
+    return myAddress;
 }
 
 
